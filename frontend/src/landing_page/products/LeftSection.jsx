@@ -1,6 +1,6 @@
 import React from "react";
 import appstoreImg from '../../assets/images/appstoreBadge.svg'
-import googleplayImg from '../../assets/images/googleplayBadge.svg'
+import googleplayImg from '../../assets/images/googlePlayBadge.svg'
 
 function LeftSection({
   imageUrl,
