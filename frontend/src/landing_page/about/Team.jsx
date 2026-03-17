@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import nikhilImg from "../../assets/images/Nikhil.jpg";
 import kailashImg from "../../assets/images/Kailash.jpg";
-import venuImg from "../../assets/images/venu.jpg";
+import venuImg from "../../assets/images/Venu.jpg";
 
 
 function Team() {
