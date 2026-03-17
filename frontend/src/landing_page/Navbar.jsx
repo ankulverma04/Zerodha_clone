@@ -1,6 +1,6 @@
 import "../App.css";
 import { Link } from "react-router-dom";
-import logo from "../../src/assets/images/logo.svg";
+import logo from "../assets/images/logo.svg";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light p-3 fixed-top">
