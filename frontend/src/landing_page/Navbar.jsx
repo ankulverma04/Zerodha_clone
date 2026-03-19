@@ -30,7 +30,7 @@ function Navbar() {
           // data-bs-toggle="collapse"
           // data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
-          aria-expanded="false"
+          aria-expanded={isOpen ? "true" : "false"}
           aria-label="Toggle navigation"
           onClick={handleToggle}
         >
