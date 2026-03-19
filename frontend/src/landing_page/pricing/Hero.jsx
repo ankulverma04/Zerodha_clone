@@ -5,7 +5,7 @@ function Hero() {
   return (
     <>
       {/* Heading &Para Section */}
-      <div className="container">
+      <div className="container pt-5">
         <h2 className="text-center mt-5 pt-5">Charges</h2>
         <p className="text-center fs-5 text-muted">
           List of all charges and taxes

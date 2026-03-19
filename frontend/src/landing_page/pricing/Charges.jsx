@@ -128,7 +128,7 @@ const Charges = () => {
         </div>
          {/* signup */}
           <div className="row justify-content-center mt-5 p-2">
-            <div className="col-6 col-sm-6 text-center">
+            <div className="col-7 col-sm-6 text-center">
               <h2>Open a Zerodha Account</h2>
               <p className="fs-6 text-muted">
                 Online platform to invest in stocks,derivatives,mutual funds and

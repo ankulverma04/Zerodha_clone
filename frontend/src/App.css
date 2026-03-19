@@ -10,6 +10,10 @@ color:blue
   font-size: 15px;
 }
 
+.navbar {
+  z-index: 9999 !important;
+}
+
 .new{
     margin-top: 30px;
 }
@@ -92,3 +96,9 @@ background:#f9f9f9;
 .a{
 text-decoration: underline;
 }
+
+.active-link {
+  color: blue !important; 
+  font-weight: 600;
+}
+

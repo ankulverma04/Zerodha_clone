@@ -51,9 +51,9 @@ const PartnersGallery = () => {
         partner platforms
       </p>
       <div className="container mt-5 p-5">
-        <div className="row g-5">
+        <div className="row gap-5 justify-content-center">
           {partners.map((item, index) => (
-            <div className="col-12 col-md-6 col-lg-4 text-center" key={index}>
+            <div className=" col-sm-6 col-md-6 col-lg-4 text-center" key={index}>
               <div className="partner-card p-3">
                 <img
                   src={item.img}
@@ -68,7 +68,7 @@ const PartnersGallery = () => {
 
         {/* Button */}
         <div className="text-center mt-5">
-          <button className="btn btn-primary px-4 py-2"
+          <button className="btn btn-primary px-2 py-2"
           onClick={()=>navigate("/SignUp")}>
             Sign up for free
           </button>

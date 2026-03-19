@@ -5,7 +5,7 @@ function AboutPage() {
   return (
     <>
       <div>
-        <div className="row justify-content-center mt-5 text-muted text-center">
+        <div className="row justify-content-center mt-5 pt-5 text-muted text-center">
           <div className="col-sm-6 mt-5">
             <h3 className="AboutHeading mb-5">
               We pioneered the discount broking model in India. <br />

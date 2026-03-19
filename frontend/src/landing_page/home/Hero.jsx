@@ -11,7 +11,7 @@ function Hero() {
         </div>
       </div>
       <div className="row justify-content-center">
-        <div className="col-6 col-sm-6 text-center">
+        <div className="col-7 col-sm-6 text-center">
             <h2>Invest is everything</h2>
             <p className="fs-6 text-muted">Online platform to invest in stocks,derivatives,mutual funds and more</p>
              <button className="border-0 btn btn-primary px-5 py-2 fs-6" onClick={()=>navigate("/SignUp")}>SignUp Now</button>
