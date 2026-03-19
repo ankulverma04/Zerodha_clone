@@ -31,7 +31,7 @@ export default function Login() {
 
       setMsg("Login success ✅");
       // to dashboard project
-     window.location.href = "http://localhost:5174";
+     window.location.href = import.meta.env.VITE_DASHBOARD_URL;
     } catch (err) {
       setMsg(err.response?.data?.message || "Error ❌");
     }
