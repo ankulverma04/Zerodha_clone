@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// Vercel environment variable se base URL lo
 export const BASE_URL = "https://zerodha-clone-29if.onrender.com"
 
 export const api = axios.create({
