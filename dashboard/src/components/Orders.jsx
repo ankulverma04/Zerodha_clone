@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+// import {orders} from "../Data/data"
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/api/orders`).then((res) => {
-      setOrders(res.data);
-    });
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/orders`)
+      .then((res) => {
+        setOrders(res.data);
+      })
+      .catch((err) => {
+        console.log("Order Failde", err);
+      });
   }, []);
 
-    return (
+  return (
     <div className="order-table">
       <table>
         <thead>
