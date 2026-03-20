@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState,useContext } from "react";
 
 import axios from "axios";
 
@@ -10,20 +9,27 @@ import "./BuyActionsWindow.css";
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
+  const { closeBuyWindow } = useContext(GeneralContext);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:3000/api/newOrder", {
+   axios
+   .post(`${import.meta.env.VITE_API_URL}/api/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
+    })
+  .then(() => {
+    alert("ORDER PLACED✅")
+      closeBuyWindow(); // ✅ window close after success
+    })
+    .catch((err) => {
+      console.log("Order failed:", err);
     });
-
-    GeneralContext.closeBuyWindow();
   };
 
   const handleCancelClick = () => {
-    GeneralContext.closeBuyWindow();
+    closeBuyWindow();
   };
 
   return (
@@ -57,12 +63,12 @@ const BuyActionWindow = ({ uid }) => {
       <div className="buttons">
         <span>Margin required ₹140.65</span>
         <div>
-          <Link className="btn btn-primary" onClick={handleBuyClick}>
+          <button className="btn btn-primary" onClick={handleBuyClick}>
             Buy
-          </Link>
-          <Link to="" className="btn btn-danger" onClick={handleCancelClick}>
+          </button>
+          <button to="" className="btn btn-danger" onClick={handleCancelClick}>
             Cancel
-          </Link>
+          </button>
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import {orders} from "../Data/data"
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);

@@ -34,19 +34,6 @@ const WatchList = () => {
   ]
  }
 
-//  const data = {
-//   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//   datasets: [
-//     {
-     
-//     },
-//   ],
-// };
-
-
-
-
-
   return (
     <div className="watchlist-container">
       <div className="search-container">

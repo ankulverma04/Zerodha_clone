@@ -13,7 +13,9 @@ app.use(cors())
 app.use(express.json());
 dbConnect();
 app.use("/api",router)
-
+app.get("/ping",(req,res)=>{
+  res.send("Server alive!")
+})
 
 // app.get("/addHoldings", async (req, res) => {
 //   let temHoldings = [

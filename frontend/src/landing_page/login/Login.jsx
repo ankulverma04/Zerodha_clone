@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { api, setToken } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [msg, setMsg] = useState("");
+    const[load,setLoad]=useState(false)
   const navigate = useNavigate();
 
   const handleChange = (e) =>
@@ -22,6 +24,7 @@ export default function Login() {
 
     const error = validate();
     if (error) return setMsg(error);
+    setLoad(true)
 
     try {
       const res = await api.post("/api/login", form);
@@ -35,10 +38,28 @@ export default function Login() {
     } catch (err) {
       setMsg(err.response?.data?.message || "Error ❌");
     }
+    finally{
+          setLoad(false)
+
+    }
   };
 
   return (
     <div className="container py-4" style={{marginTop:"20vh"}}>
+      {load && (
+  <div style={{
+    position: "fixed",
+    top: 0, left: 0,
+    width: "100%", height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255,255,255,0.5)",
+    zIndex: 9999
+  }}>
+    <ClipLoader size={60} color="#007bff" />
+  </div>
+)}
       <div className="row justify-content-center">
         <div className="col-12 col-sm-10 col-md-6 col-lg-5">
           <div className="card shadow">
