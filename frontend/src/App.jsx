@@ -10,12 +10,12 @@ import ProductsPage from "./landing_page/products/ProductsPage";
 import Signup from "./landing_page/signup/Signup";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./landing_page/login/Login";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
       <ScrollTop/>
       <Routes>
@@ -29,7 +29,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 }
 
