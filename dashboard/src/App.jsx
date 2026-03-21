@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {HashRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import "./index.css";
 import Home from "./components/Home";
@@ -15,11 +15,11 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, []);
    return(
-     <BrowserRouter>
+     <Router>
       <Routes>
         <Route path="/*" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
    )
 }
 export default App;
