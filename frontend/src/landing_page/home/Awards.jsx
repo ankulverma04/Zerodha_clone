@@ -3,8 +3,8 @@ import awardImg from "../../assets/images/largestBroker.svg";
 import pressLogo from '../../assets/images/pressLogos.png';
 function Awards() {
   return (
-    <div className="container p-5">
-      <div className="row mt-4 jutify-content-center">
+    <div className="container px-3 py-4 py-md-5">
+      <div className="row mt-4 justify-content-center">
         <div className="col-12 col-sm-6 col-lg-6 mb-4">
           <img src={awardImg} alt="AWArdImg" className="img-fluid" />
         </div>

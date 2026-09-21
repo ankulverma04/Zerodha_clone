@@ -1,20 +1,25 @@
-import React from "react";
-import { positions } from "../Data/data";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import api from "../api.js";
+
 const Positions = () => {
   const [allPosition, setAllPosition] = useState([]);
+
   useEffect(() => {
-    axios.get("http://localhost:3000/api/position").then((res) => {
-      console.log(res.data);
-      setAllPosition(res.data);
-    });
-  },[]);
+    api
+      .get("/api/position")
+      .then((res) => {
+        setAllPosition(res.data);
+      })
+      .catch((err) => {
+        console.log("Positions failed", err);
+      });
+  }, []);
+
   return (
     <>
       <h3 className="title">Positions ({allPosition.length})</h3>
 
-      <div className="order-table">
+      <div className="order-table table-responsive">
         <table>
           <thead>
             <tr>
@@ -28,14 +33,14 @@ const Positions = () => {
             </tr>
           </thead>
           <tbody>
-            {allPosition.map((stock, index) => {
+            {allPosition.map((stock) => {
               const curValue = stock.price * stock.qty;
               const isProfit = curValue - stock.avg * stock.qty >= 0.0;
               const profClass = isProfit ? "profit" : "loss";
               const dayClass = stock.isLoss ? "loss" : "profit";
 
               return (
-                <tr key={index}>
+                <tr key={stock._id || stock.name}>
                   <td>{stock.product}</td>
                   <td>{stock.name}</td>
                   <td>{stock.qty}</td>

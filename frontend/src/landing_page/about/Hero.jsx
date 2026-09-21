@@ -2,11 +2,11 @@ import React from "react";
 import Ceo from '../../assets/images/nithin-kamath.jpg'
 function Hero() {
   return (
-    <div className="container">
+    <div className="container px-3">
       <div className="row justify-content-center ">
-        <div className="col-sm-8">
-          <div className="row mt-5 mb-5 pb-5">
-            <div className="col-sm-6 aboutPara">
+        <div className="col-12 col-lg-8">
+          <div className="row mt-4 mt-md-5 mb-5 pb-4">
+            <div className="col-12 col-sm-6 aboutPara">
               <p>
                 We kick-started operations on the 15th of August, 2010 with the
                 goal of breaking all barriers that traders and investors face in
@@ -26,7 +26,7 @@ function Hero() {
                 contributing over 15% of all Indian retail trading volumes.
               </p>
             </div>
-            <div className="col-sm-6 aboutPara">
+            <div className="col-12 col-sm-6 aboutPara">
               <p>
                 In addition, we run a number of popular open online educational
                 and community initiatives to empower retail traders and
@@ -52,14 +52,14 @@ function Hero() {
       {/* Profile sec.. */}
       <div className="row justify-content-center">
         <h2 className="text-center mb-5">People</h2>
-        <div className="col-sm-8">
+        <div className="col-12 col-lg-8">
           <div className="row">
-            <div className="col-sm-5 text-center">
+            <div className="col-12 col-sm-5 text-center">
                 <img src={Ceo} alt="CeoImg" style={{width:"90%"}} className="rounded-circle mb-3"/>
                 <h4>Nitin Kamath</h4>
                 <p>Founder CEO</p>
             </div>
-            <div className="col-sm-7 mt-5 aboutPara">
+            <div className="col-12 col-sm-7 mt-4 mt-sm-5 aboutPara">
               <p>
                 Nithin bootstrapped and founded Zerodha in 2010 to overcome the
                 hurdles he faced during his decade long stint as a trader.

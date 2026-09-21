@@ -1,3 +1,19 @@
+body {
+  padding-top: 70px;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.nav-logo {
+  height: 18px;
+  width: auto;
+  max-width: 140px;
+}
+
 body a {
   text-decoration: none;
 }
@@ -10,8 +26,17 @@ color:blue
   font-size: 15px;
 }
 
-.navbar {
-  z-index: 9999 !important;
+.navbar .container-fluid {
+  flex-wrap: wrap;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.navbar-collapse.show .navbar-nav {
+  padding-top: 8px;
 }
 
 .new{
@@ -39,7 +64,13 @@ font-size: 13px;
 }
 
 .partners-section {
-  padding: 8rem;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .partners-section {
+    padding: 4rem 2rem;
+  }
 }
 
 .partner-card {

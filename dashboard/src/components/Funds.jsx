@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Funds = () => {
   return (
     <>
-      <div className="funds">
+      <div className="funds flex-column flex-sm-row align-items-stretch align-items-sm-center">
         <p>Instant, zero-cost fund transfers with UPI </p>
         <Link className="btn btn-green">Add funds</Link>
         <Link className="btn btn-blue">Withdraw</Link>

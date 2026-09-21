@@ -50,8 +50,8 @@ const PartnersGallery = () => {
         Extend your trading and investment experience even further with our
         partner platforms
       </p>
-      <div className="container mt-5 p-5">
-        <div className="row gap-5 justify-content-center">
+      <div className="container mt-4 mt-md-5 px-3 py-3 py-md-5">
+        <div className="row g-4 justify-content-center">
           {partners.map((item, index) => (
             <div className=" col-sm-6 col-md-6 col-lg-4 text-center" key={index}>
               <div className="partner-card p-3">

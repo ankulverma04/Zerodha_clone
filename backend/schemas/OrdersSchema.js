@@ -4,6 +4,8 @@ const OrdersSchema = new mongoose.Schema({
   name: String,
   qty: Number,
   price: Number,
-  mode:String,
+  mode: String,
+  userId: String,
 });
+
 export default OrdersSchema;

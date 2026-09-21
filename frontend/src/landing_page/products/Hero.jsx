@@ -2,7 +2,7 @@ import React from "react";
 function Hero() {
   return(
   <div className="container pt-5">
-    <div className="row justify-content-center text-center mt-5 p-5  ">
+    <div className="row justify-content-center text-center mt-4 mt-md-5 px-3 py-4 py-md-5  ">
       <h2>Zerodha Products</h2>
       <p className="fs-4 text-muted">Sleek, modern, and intuitive trading platforms</p>
       <p>

@@ -3,7 +3,7 @@ function Pricing() {
   return (
     <div className="container ">
       <div className="row justify-content-center">
-        <div className=" col-sm-4 col-md-4  ">
+        <div className="col-12 col-sm-4 col-md-4 mb-4">
           <h2>Unbeatable price</h2>
           <p className="text-muted mt-4">
             We poineered the concept of discount broking and price transparency

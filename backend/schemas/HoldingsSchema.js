@@ -1,4 +1,3 @@
-// import { Schema } from "@mui/icons-material";
 import mongoose from "mongoose";
 
 const HoldingsSchema = new mongoose.Schema({

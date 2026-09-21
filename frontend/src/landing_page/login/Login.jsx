@@ -29,12 +29,17 @@ export default function Login() {
     try {
       const res = await api.post("/api/login", form);
 
-      localStorage.setItem("token", res.data.token);
       setToken(res.data.token);
+      localStorage.setItem("userName", res.data.user.name);
 
       setMsg("Login success ✅");
-      // to dashboard project
-     window.location.href = import.meta.env.VITE_DASHBOARD_URL;
+
+      const dashUrl = (import.meta.env.VITE_DASHBOARD_URL || "http://localhost:24678").replace(
+        /\/$/,
+        ""
+      );
+      const name = encodeURIComponent(res.data.user.name);
+      window.location.href = `${dashUrl}/?token=${res.data.token}&name=${name}`;
     } catch (err) {
       setMsg(err.response?.data?.message || "Error ❌");
     }

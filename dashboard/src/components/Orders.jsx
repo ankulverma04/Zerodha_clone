@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api.js";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
+  const [msg, setMsg] = useState("Loading...");
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/api/orders`)
+    api
+      .get("/api/orders")
       .then((res) => {
         setOrders(res.data);
+        setMsg("");
       })
-      .catch((err) => {
-        console.log("Order Failde", err);
+      .catch(() => {
+        setMsg("Could not load orders");
       });
   }, []);
 
+  if (msg) {
+    return <p className="p-3">{msg}</p>;
+  }
+
+  if (orders.length === 0) {
+    return <p className="p-3">No orders yet</p>;
+  }
+
   return (
-    <div className="order-table">
+    <div className="order-table table-responsive">
       <table>
         <thead>
           <tr className="bg-danger ">

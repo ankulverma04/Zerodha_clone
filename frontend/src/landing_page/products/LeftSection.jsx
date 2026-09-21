@@ -28,12 +28,12 @@ function LeftSection({
         <h2>{productname}</h2>
         <p>{productDiscription}</p>
 
-        <div className="d-flex gap-5 justify-content-center justify-content-sm-start mb-3">
+        <div className="d-flex flex-wrap gap-3 gap-sm-5 justify-content-center justify-content-sm-start mb-3">
           <a href={tryDemo}>Try Demo →</a>
           <a href={learnMore}>Learn More →</a>
         </div>
 
-        <div className="d-flex gap-3 justify-content-center justify-content-sm-start">
+        <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-sm-start">
           <a href={googlePlay} >
             <img src={googleplayImg} alt="" className="img-fluid" style={{maxWidth:"140px"}}/>
           </a>

@@ -12,7 +12,7 @@ function Hero() {
         </p>
 
         {/* Price Card */}
-        <div className="container px-5 py-5">
+        <div className="container px-2 px-md-5 py-4 py-md-5">
           <div className="row text-center  mt-5">
             {/* Column 1 */}
             <div className="col-md-4 mb-4">

@@ -120,12 +120,12 @@ function CreateTicket() {
   ];
 
   return (
-    <div className="container p-5">
-      <div className="row justify-content-center ps-4 g-4">
+    <div className="container px-3 py-4 py-md-5">
+      <div className="row justify-content-center g-4">
         {ticketData.map((item, index) => {
           const Icon = item.icon; // icon component ko variable me store
           return (
-            <div className="col-md-4 mb-4" key={index}>
+            <div className="col-12 col-sm-6 col-md-4 mb-4" key={index}>
               <h5 className="mb-4 d-flex align-items-center">
                 <Icon style={{ marginRight: "10px" }} />
                 {item.title}

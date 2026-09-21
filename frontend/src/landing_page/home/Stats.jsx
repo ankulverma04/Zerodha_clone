@@ -5,9 +5,9 @@ import statsImg from "../../assets/images/ecosystem.png";
 
 function Stats() {
   return (
-    <div className="container ">
-      <div className="row mb-5 justify-content-center">
-        <div className="col-10 col-sm-5">
+    <div className="container px-3">
+      <div className="row mb-5 justify-content-center g-4">
+        <div className="col-12 col-md-6 col-lg-5">
           <h2>Trust with confidence</h2>
           <h4 className="mt-5">Customer-first alweays</h4>
           <p className="text-muted">
@@ -30,7 +30,7 @@ function Stats() {
             worth of equity investments
           </p>
         </div>
-        <div className="col-10 col-sm-5 mt-5">
+        <div className="col-12 col-md-6 col-lg-5">
           <img src={statsImg} alt="StatsImg" className="img-fluid" />
           <div>
             {/* <Link

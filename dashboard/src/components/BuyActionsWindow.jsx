@@ -1,38 +1,39 @@
-import React, { useState,useContext,useEffect } from "react";
-
-import axios from "axios";
-
-import GeneralContext from "../components/GeneralContext.jsx";
-
+import React, { useState, useContext, useEffect } from "react";
+import GeneralContext from "./GeneralContext.jsx";
+import api from "../api.js";
 import "./BuyActionsWindow.css";
 
-const BuyActionWindow = ({ uid,stockData }) => {
+const BuyActionWindow = ({ stock, mode }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
-  const [stockPrice, setStockPrice] = useState(0.0);
+  const [stockPrice, setStockPrice] = useState(0);
   const { closeBuyWindow } = useContext(GeneralContext);
 
   useEffect(() => {
-    if (stockData) {
-      setStockPrice(stockData.price); // 👈 yaha current price set ho raha hai
+    if (stock) {
+      setStockPrice(stock.price);
     }
-  }, [stockData]);
-  console.log("stockData:", stockData);
+  }, [stock]);
 
   const handleBuyClick = () => {
-   axios
-   .post(`${import.meta.env.VITE_API_URL}/api/newOrder`, {
-      name: uid,
-      qty: stockQuantity,
-      price: stockPrice,
-      mode: "BUY",
-    })
-  .then(() => {
-    alert("ORDER PLACED✅")
-      closeBuyWindow(); // ✅ window close after success
-    })
-    .catch((err) => {
-      console.log("Order failed:", err);
-    });
+    if (stockQuantity < 1 || stockPrice <= 0) {
+      alert("Enter valid qty and price");
+      return;
+    }
+
+    api
+      .post("/api/newOrder", {
+        name: stock.name,
+        qty: stockQuantity,
+        price: stockPrice,
+        mode: mode || "BUY",
+      })
+      .then(() => {
+        alert("ORDER PLACED✅");
+        closeBuyWindow();
+      })
+      .catch((err) => {
+        alert(err.response?.data?.message || "Order failed");
+      });
   };
 
   const handleCancelClick = () => {
@@ -40,7 +41,7 @@ const BuyActionWindow = ({ uid,stockData }) => {
   };
 
   return (
-    <div className="container w-25" id="buy-window" draggable="true">
+    <div className="buy-window" id="buy-window">
       <div className="regular-order">
         <div className="inputs">
           <fieldset>
@@ -49,6 +50,7 @@ const BuyActionWindow = ({ uid,stockData }) => {
               type="number"
               name="qty"
               id="qty"
+              min="1"
               onChange={(e) => setStockQuantity(Number(e.target.value))}
               value={stockQuantity}
             />
@@ -68,12 +70,12 @@ const BuyActionWindow = ({ uid,stockData }) => {
       </div>
 
       <div className="buttons">
-        <span>Total: ₹ {stockQuantity * stockPrice} </span>
+        <span>Total: ₹ {(stockQuantity * stockPrice).toFixed(2)} </span>
         <div>
           <button className="btn btn-primary" onClick={handleBuyClick}>
-            Buy
+            {mode || "BUY"}
           </button>
-          <button to="" className="btn btn-danger" onClick={handleCancelClick}>
+          <button className="btn btn-danger" onClick={handleCancelClick}>
             Cancel
           </button>
         </div>

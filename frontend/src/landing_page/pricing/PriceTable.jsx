@@ -5,7 +5,7 @@ const PriceTable = () => {
     <>
       <div className="container mt-5">
         <div className="row justify-content-center ">
-          <div className="col-sm-10">
+          <div className="col-12 col-md-10 table-responsive">
             <h3 className="text-muted mb-3">Charges for account opening</h3>
             <table
               border="1"
@@ -43,7 +43,7 @@ const PriceTable = () => {
 
       <div className="container mt-5">
         <div className="row justify-content-center ">
-          <div className="col-sm-10">
+          <div className="col-12 col-md-10 table-responsive">
             <h3 className="text-muted mb-3">
               Demat AMC (Annual Maintenance Charge)
             </h3>
@@ -82,7 +82,7 @@ const PriceTable = () => {
       {/* Table-3 */}
       <div className="container mt-5">
         <div className="row justify-content-center ">
-          <div className="col-sm-10">
+          <div className="col-12 col-md-10 table-responsive">
             <h3 className="text-muted mb-3">
               Charges for optional value added services
             </h3>

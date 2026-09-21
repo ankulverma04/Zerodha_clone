@@ -14,21 +14,14 @@ function Navbar() {
     setIsOpen(false);
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light p-3 fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light py-2 px-3 fixed-top shadow-sm">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          <img
-            src={logo}
-            alt="MainLogo"
-            className=""
-            style={{ width: "30%", marginLeft: "10px" }}
-          />
-        </a>
+        <NavLink className="navbar-brand" to="/" onClick={handleClick}>
+          <img src={logo} alt="MainLogo" className="nav-logo" />
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
-          // data-bs-toggle="collapse"
-          // data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded={isOpen ? "true" : "false"}
           aria-label="Toggle navigation"
@@ -37,8 +30,8 @@ function Navbar() {
           <span className="navbar-toggler-icon" />
         </button>
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-5 align-item-center ">
-            <li className="nav-item ">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 gap-lg-4">
+            <li className="nav-item">
               <NavLink
                 to="/"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
@@ -90,6 +83,15 @@ function Navbar() {
                 className={({ isActive }) => (isActive ? "active-link" : "")}
               >
                 Signup
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/login"
+                onClick={handleClick}
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                Login
               </NavLink>
             </li>
           </ul>

@@ -6,6 +6,8 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   server: {
-    historyApiFallback: true, // Dev me refresh safe
+    port: 24678,
+    strictPort: true,
+    historyApiFallback: true,
   },
 })

@@ -11,7 +11,7 @@ function OpenAccount() {
             Modern platform and apps,₹0 investments and flat ₹20 intraday and
             F&Q
           </p>
-          <button className="border-0 btn btn-primary px-5 py-2 fs-6"
+          <button className="border-0 btn btn-primary px-4 px-sm-5 py-2 fs-6"
           onClick={()=>navigate("/SignUp")}>
             SignUp Now
           </button>
